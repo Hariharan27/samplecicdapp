@@ -22,6 +22,7 @@ android {
             keyPassword 'ideas2it'
             storeFile file('samplecicd.jks')
             storePassword 'ideas2it'
+            
         }
     }
 
