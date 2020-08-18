@@ -43,9 +43,21 @@ jobs:
     # Step to install the NDK
     - name: Install NDK
       run: echo "y" | sudo ${ANDROID_HOME}/tools/bin/sdkmanager --install "ndk;20.0.5594570"
-    # Step to Build the Project and generate the APK
-    - name: Build Debug 
-      run: ./gradlew assembleDebug
+
+     # step to build release build 
+    - name: Build Release 
+      uses: r0adkll/sign-android-release@v1
+      with:
+           releaseDirectory: app/build/outputs/apk/release
+           signingKeyBase64: ${{ secrets.KEY_JKS }}
+           alias: ${{ secrets.ALIAS_PASSWORD }}
+           keyStorePassword: ${{ secrets.KEY_PASSWORD }}
+           keyPassword: ${{ secrets.ALIAS_PASSWORD }}
+
+#     # Step to Build the Project and generate the APK
+#     - name: Build Debug 
+#       run: ./gradlew assembleDebug
+    
     # Step to Submit the generated APK to Firebase App Distribution
     - name: upload artifact to Firebase App Distribution
       uses: wzieba/Firebase-Distribution-Github-Action@v1.2.1
@@ -53,4 +65,4 @@ jobs:
         appId: ${{ secrets.FIREBASE_APP_ID }}
         token: ${{ secrets.FIREBASE_TOKEN }}
         groups: testers
-        file: app/build/outputs/apk/debug/app-debug.apk
+        file: app/build/outputs/apk/release/app-release.apk
