@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1031018850523",
+    "firebase_url": "https://sampleagent-59099.firebaseio.com",
+    "project_id": "sampleagent-59099",
+    "storage_bucket": "sampleagent-59099.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1031018850523:android:b47fafb0f91ed41d5384fe",
+        "android_client_info": {
+          "package_name": "com.ideas2it.samplecicdapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1031018850523-4vv140ee6fgc5uhdgko23m2hpuas5sjh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBD9hvaTefcRZqDy8L1xLS8pcpmik7Wybo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1031018850523-7rf8l8uea9nd7fsprn0h42kqtgmge77i.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1031018850523-h4ek073jm4nmiqplqnimhfbom7d0j7o9.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "ai.e5"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
