@@ -39,12 +39,20 @@ jobs:
     #  Step para instalar o NDK
     - name: Install NDK
       run: echo "y" | sudo ${ANDROID_HOME}/tools/bin/sdkmanager --install "ndk;20.0.5594570"
-    # Step para Buildar o Projeto e gerar a APK
-    - name: Build Debug 
-      run: ./gradlew assembleDebug
-    # Step para salvar a APK como Artifact
-    - name: Upload APK on Github Artifact
-      uses: actions/upload-artifact@v1
+       
+    - uses: r0adkll/sign-android-release@v1
       with:
-        name: app
-        path: app/build/outputs/apk/prod/debug/app-prod-debug.apk 
+         releaseDirectory: app/build/outputs/apk/release
+         signingKeyBase64: ${{ secrets.KEY_JKS }}
+         alias: ${{ secrets.KEY_PASSWORD }}
+         keyStorePassword: ${{ secrets.KEY_PASSWORD }}
+         keyPassword: ${{ secrets.ALIAS_PASSWORD }}
+#     # Step para Buildar o Projeto e gerar a APK
+#     - name: Build Debug 
+#       run: ./gradlew assembleDebug
+#     # Step para salvar a APK como Artifact
+#     - name: Upload APK on Github Artifact
+#       uses: actions/upload-artifact@v1
+#       with:
+#         name: app
+#         path: app/build/outputs/apk/prod/debug/app-prod-debug.apk 
