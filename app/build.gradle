@@ -10,7 +10,7 @@ android {
         applicationId "com.ideas2it.samplecicdapplication"
         minSdkVersion 21
         targetSdkVersion 30
-        versionCode 2
+        versionCode 3
         versionName "2.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -22,6 +22,7 @@ android {
             keyPassword 'ideas2it'
             storeFile file('samplecicd.jks')
             storePassword 'ideas2it'
+
         }
     }
 
